@@ -9,7 +9,7 @@ git pull origin main
 # Build Docker image
 docker build -t python-sample-app:latest .
 
-# Stop & remove existing container if exists
+# Stop & remove existing container if exists.
 docker stop python-sample-app || true
 docker rm python-sample-app || true
 
