@@ -7,172 +7,63 @@ DEPRECATED: The legacy builder is deprecated and will be removed in a future rel
             Install the buildx component to build images with BuildKit:
             https://docs.docker.com/go/buildx/
 
-Sending build context to Docker daemon  83.97kB
+Sending build context to Docker daemon  93.18kB
 Step 1/6 : FROM python:3.11-slim
-3.11-slim: Pulling from library/python
-0e4bc2bd6656: Pulling fs layer
-22b63e76fde1: Pulling fs layer
-b3dd773c3296: Pulling fs layer
-1771569cc129: Pulling fs layer
-1771569cc129: Waiting
-22b63e76fde1: Verifying Checksum
-22b63e76fde1: Download complete
-1771569cc129: Download complete
-From https://github.com/kavindusamaranayake/python-app-simple
- * branch            main       -> FETCH_HEAD
-Already up to date.
-failed to fetch metadata: fork/exec /usr/local/lib/docker/cli-plugins/docker-buildx: no such file or directory
-
-DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
-            Install the buildx component to build images with BuildKit:
-            https://docs.docker.com/go/buildx/
-
-Sending build context to Docker daemon  84.99kB
-Step 1/6 : FROM python:3.11-slim
-b3dd773c3296: Verifying Checksum
-b3dd773c3296: Download complete
-3.11-slim: Pulling from library/python
-0e4bc2bd6656: Pulling fs layer
-22b63e76fde1: Pulling fs layer
-b3dd773c3296: Pulling fs layer
-22b63e76fde1: Download complete
-1771569cc129: Pulling fs layer
-b3dd773c3296: Download complete
-1771569cc129: Download complete
-0e4bc2bd6656: 0e4bc2bd6656: Verifying Checksum
-Verifying Checksum
-0e4bc2bd6656: 0e4bc2bd6656: Download complete
-Download complete
-0e4bc2bd6656: Pull complete
-0e4bc2bd6656: Pull complete
-22b63e76fde1: Pull complete
-22b63e76fde1: Pull complete
-b3dd773c3296: b3dd773c3296: Pull complete
-Pull complete
-1771569cc129: Pull complete
-1771569cc129: Pull complete
-Digest: sha256:193fdd0bbcb3d2ae612bd6cc3548d2f7c78d65b549fcaa8af75624c47474444d
-Digest: sha256:193fdd0bbcb3d2ae612bd6cc3548d2f7c78d65b549fcaa8af75624c47474444d
-Status: Downloaded newer image for python:3.11-slim
-Status: Downloaded newer image for python:3.11-slim
  ---> 040af88f5bce
 Step 2/6 : WORKDIR /app
- ---> 040af88f5bce
-Step 2/6 : WORKDIR /app
- ---> Running in 09515eb35850
- ---> Running in 4d72389a5403
- ---> Removed intermediate container 4d72389a5403
- ---> ff29077e5e7b
-Step 3/6 : COPY . .
- ---> Removed intermediate container 09515eb35850
+ ---> Using cache
  ---> 89cc55743e04
 Step 3/6 : COPY . .
- ---> 7fbcacccd137
+ ---> 715258073434
 Step 4/6 : RUN pip install -r requirements.txt
- ---> 41795e3cda9e
-Step 4/6 : RUN pip install -r requirements.txt
- ---> Running in 365879fa64b9
- ---> Running in 1a609ca994a8
-Collecting Flask==3.0.0 (from -r requirements.txt (line 1))
+ ---> Running in 1bdd21dc2ff3
 Collecting Flask==3.0.0 (from -r requirements.txt (line 1))
   Downloading flask-3.0.0-py3-none-any.whl.metadata (3.6 kB)
-  Downloading flask-3.0.0-py3-none-any.whl.metadata (3.6 kB)
-Collecting Werkzeug>=3.0.0 (from Flask==3.0.0->-r requirements.txt (line 1))
 Collecting Werkzeug>=3.0.0 (from Flask==3.0.0->-r requirements.txt (line 1))
   Downloading werkzeug-3.1.4-py3-none-any.whl.metadata (4.0 kB)
-  Downloading werkzeug-3.1.4-py3-none-any.whl.metadata (4.0 kB)
-Collecting Jinja2>=3.1.2 (from Flask==3.0.0->-r requirements.txt (line 1))
-  Downloading jinja2-3.1.6-py3-none-any.whl.metadata (2.9 kB)
 Collecting Jinja2>=3.1.2 (from Flask==3.0.0->-r requirements.txt (line 1))
   Downloading jinja2-3.1.6-py3-none-any.whl.metadata (2.9 kB)
 Collecting itsdangerous>=2.1.2 (from Flask==3.0.0->-r requirements.txt (line 1))
   Downloading itsdangerous-2.2.0-py3-none-any.whl.metadata (1.9 kB)
-Collecting itsdangerous>=2.1.2 (from Flask==3.0.0->-r requirements.txt (line 1))
-  Downloading itsdangerous-2.2.0-py3-none-any.whl.metadata (1.9 kB)
-Collecting click>=8.1.3 (from Flask==3.0.0->-r requirements.txt (line 1))
-  Downloading click-8.3.1-py3-none-any.whl.metadata (2.6 kB)
 Collecting click>=8.1.3 (from Flask==3.0.0->-r requirements.txt (line 1))
   Downloading click-8.3.1-py3-none-any.whl.metadata (2.6 kB)
 Collecting blinker>=1.6.2 (from Flask==3.0.0->-r requirements.txt (line 1))
   Downloading blinker-1.9.0-py3-none-any.whl.metadata (1.6 kB)
-Collecting blinker>=1.6.2 (from Flask==3.0.0->-r requirements.txt (line 1))
-  Downloading blinker-1.9.0-py3-none-any.whl.metadata (1.6 kB)
 Collecting MarkupSafe>=2.0 (from Jinja2>=3.1.2->Flask==3.0.0->-r requirements.txt (line 1))
   Downloading markupsafe-3.0.3-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.7 kB)
-Collecting MarkupSafe>=2.0 (from Jinja2>=3.1.2->Flask==3.0.0->-r requirements.txt (line 1))
 Downloading flask-3.0.0-py3-none-any.whl (99 kB)
-  Downloading markupsafe-3.0.3-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.7 kB)
-Downloading flask-3.0.0-py3-none-any.whl (99 kB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 99.7/99.7 kB 171.9 kB/s eta 0:00:00
-Downloading blinker-1.9.0-py3-none-any.whl (8.5 kB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 99.7/99.7 kB 135.1 kB/s eta 0:00:00
-Downloading click-8.3.1-py3-none-any.whl (108 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 99.7/99.7 kB 98.7 kB/s eta 0:00:00
 Downloading blinker-1.9.0-py3-none-any.whl (8.5 kB)
 Downloading click-8.3.1-py3-none-any.whl (108 kB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 108.3/108.3 kB 283.4 kB/s eta 0:00:00
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 108.3/108.3 kB 742.0 kB/s eta 0:00:00
-Downloading itsdangerous-2.2.0-py3-none-any.whl (16 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 108.3/108.3 kB 50.1 kB/s eta 0:00:00
 Downloading itsdangerous-2.2.0-py3-none-any.whl (16 kB)
 Downloading jinja2-3.1.6-py3-none-any.whl (134 kB)
-Downloading jinja2-3.1.6-py3-none-any.whl (134 kB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 134.9/134.9 kB 362.7 kB/s eta 0:00:00
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 134.9/134.9 kB 405.8 kB/s eta 0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 134.9/134.9 kB 69.0 kB/s eta 0:00:00
 Downloading werkzeug-3.1.4-py3-none-any.whl (224 kB)
-Downloading werkzeug-3.1.4-py3-none-any.whl (224 kB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 225.0/225.0 kB 203.5 kB/s eta 0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 225.0/225.0 kB 32.4 kB/s eta 0:00:00
 Downloading markupsafe-3.0.3-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (22 kB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 225.0/225.0 kB 165.5 kB/s eta 0:00:00
 Installing collected packages: MarkupSafe, itsdangerous, click, blinker, Werkzeug, Jinja2, Flask
-Downloading markupsafe-3.0.3-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (22 kB)
-Successfully installed Flask-3.0.0 Jinja2-3.1.6 MarkupSafe-3.0.3 Werkzeug-3.1.4 blinker-1.9.0 click-8.3.1 itsdangerous-2.2.0
 [91mWARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
-[0mInstalling collected packages: MarkupSafe, itsdangerous, click, blinker, Werkzeug, Jinja2, Flask
-Successfully installed Flask-3.0.0 Jinja2-3.1.6 MarkupSafe-3.0.3 Werkzeug-3.1.4 blinker-1.9.0 click-8.3.1 itsdangerous-2.2.0
-[91mWARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
-[0m[91m
-[notice] A new release of pip is available: 24.0 -> 25.3
-[notice] To update, run: pip install --upgrade pip
-[0m ---> Removed intermediate container 365879fa64b9
- ---> 740b6b32d69c
-Step 5/6 : EXPOSE 5000
+[0mSuccessfully installed Flask-3.0.0 Jinja2-3.1.6 MarkupSafe-3.0.3 Werkzeug-3.1.4 blinker-1.9.0 click-8.3.1 itsdangerous-2.2.0
 [91m
 [notice] A new release of pip is available: 24.0 -> 25.3
 [notice] To update, run: pip install --upgrade pip
-[0m ---> Running in 61b0fbec3ba0
- ---> Removed intermediate container 61b0fbec3ba0
- ---> 483e3b99d43f
-Step 6/6 : CMD ["python", "app.py"]
- ---> Running in b2910320142d
- ---> Removed intermediate container b2910320142d
- ---> f164fa00da3f
-Successfully built f164fa00da3f
-Successfully tagged python-sample-app:latest
-Error response from daemon: No such container: python-sample-app
-Error response from daemon: No such container: python-sample-app
-c088c3f2fabb7a7948ddefd442ccc6ba1e3094188da4c0c270c928c7bda0abed
-docker: Error response from daemon: failed to set up container networking: driver failed programming external connectivity on endpoint python-sample-app (a0d88f781f74b272bf8dfabde28c8a6f95b359dab2855e9b9e4dcfcd20d0557f): failed to bind host port for 0.0.0.0:5000:172.17.0.3:5000/tcp: address already in use
-
-Run 'docker run --help' for more information
-Deployment successful at Fri Dec  5 17:49:26 +0530 2025
- ---> Removed intermediate container 1a609ca994a8
- ---> 298bf4a0bace
+[0m ---> Removed intermediate container 1bdd21dc2ff3
+ ---> 292047aa975c
 Step 5/6 : EXPOSE 5000
- ---> Running in 80cc78898cc6
- ---> Removed intermediate container 80cc78898cc6
- ---> 2f25ca552edb
+ ---> Running in 2456e973b6c9
+ ---> Removed intermediate container 2456e973b6c9
+ ---> 0d86cffe18f7
 Step 6/6 : CMD ["python", "app.py"]
- ---> Running in 18f4c93b4d9c
- ---> Removed intermediate container 18f4c93b4d9c
- ---> bcf5eba17364
-Successfully built bcf5eba17364
+ ---> Running in dc6a39954493
+ ---> Removed intermediate container dc6a39954493
+ ---> 11b7518518a1
+Successfully built 11b7518518a1
 Successfully tagged python-sample-app:latest
 python-sample-app
 python-sample-app
-27728d21828420a8bf5d64b42807533c7fa4fd096e262778865ec3f15eda790e
-docker: Error response from daemon: failed to set up container networking: driver failed programming external connectivity on endpoint python-sample-app (25c3ba73c2c650acc4bb2e81f999b3fef9f5c233994339fbe419b11ad0eefeb5): failed to bind host port for 0.0.0.0:5000:172.17.0.3:5000/tcp: address already in use
-
-Run 'docker run --help' for more information
-Deployment successful at Fri Dec  5 17:49:28 +0530 2025
+c57b0e7932d90ccf3c60ecfb2b08f3c3a0ad931c98391c71ce8513b10747efa4
+Deployment successful at Fri Dec  5 17:56:48 +0530 2025
 From https://github.com/kavindusamaranayake/python-app-simple
  * branch            main       -> FETCH_HEAD
 Already up to date.
@@ -182,16 +73,16 @@ DEPRECATED: The legacy builder is deprecated and will be removed in a future rel
             Install the buildx component to build images with BuildKit:
             https://docs.docker.com/go/buildx/
 
-Sending build context to Docker daemon  94.21kB
+Sending build context to Docker daemon  97.28kB
 Step 1/6 : FROM python:3.11-slim
  ---> 040af88f5bce
 Step 2/6 : WORKDIR /app
  ---> Using cache
  ---> 89cc55743e04
 Step 3/6 : COPY . .
- ---> 9270b6ce4762
+ ---> b23ffecb7116
 Step 4/6 : RUN pip install -r requirements.txt
- ---> Running in 8cfd70aa2b71
+ ---> Running in d4097c2e316c
 Collecting Flask==3.0.0 (from -r requirements.txt (line 1))
   Downloading flask-3.0.0-py3-none-any.whl.metadata (3.6 kB)
 Collecting Werkzeug>=3.0.0 (from Flask==3.0.0->-r requirements.txt (line 1))
@@ -207,15 +98,15 @@ Collecting blinker>=1.6.2 (from Flask==3.0.0->-r requirements.txt (line 1))
 Collecting MarkupSafe>=2.0 (from Jinja2>=3.1.2->Flask==3.0.0->-r requirements.txt (line 1))
   Downloading markupsafe-3.0.3-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.7 kB)
 Downloading flask-3.0.0-py3-none-any.whl (99 kB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 99.7/99.7 kB 58.6 kB/s eta 0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 99.7/99.7 kB 313.2 kB/s eta 0:00:00
 Downloading blinker-1.9.0-py3-none-any.whl (8.5 kB)
 Downloading click-8.3.1-py3-none-any.whl (108 kB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 108.3/108.3 kB 351.6 kB/s eta 0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 108.3/108.3 kB 555.5 kB/s eta 0:00:00
 Downloading itsdangerous-2.2.0-py3-none-any.whl (16 kB)
 Downloading jinja2-3.1.6-py3-none-any.whl (134 kB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 134.9/134.9 kB 395.9 kB/s eta 0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 134.9/134.9 kB 345.6 kB/s eta 0:00:00
 Downloading werkzeug-3.1.4-py3-none-any.whl (224 kB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 225.0/225.0 kB 626.5 kB/s eta 0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 225.0/225.0 kB 769.0 kB/s eta 0:00:00
 Downloading markupsafe-3.0.3-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (22 kB)
 Installing collected packages: MarkupSafe, itsdangerous, click, blinker, Werkzeug, Jinja2, Flask
 Successfully installed Flask-3.0.0 Jinja2-3.1.6 MarkupSafe-3.0.3 Werkzeug-3.1.4 blinker-1.9.0 click-8.3.1 itsdangerous-2.2.0
@@ -223,25 +114,22 @@ Successfully installed Flask-3.0.0 Jinja2-3.1.6 MarkupSafe-3.0.3 Werkzeug-3.1.4 
 [0m[91m
 [notice] A new release of pip is available: 24.0 -> 25.3
 [notice] To update, run: pip install --upgrade pip
-[0m ---> Removed intermediate container 8cfd70aa2b71
- ---> dfa4379c4e3c
+[0m ---> Removed intermediate container d4097c2e316c
+ ---> 965f105b6bb5
 Step 5/6 : EXPOSE 5000
- ---> Running in 2f6c8bb49895
- ---> Removed intermediate container 2f6c8bb49895
- ---> 6a5422dba292
+ ---> Running in c95ab541f48c
+ ---> Removed intermediate container c95ab541f48c
+ ---> d1e716fb6db4
 Step 6/6 : CMD ["python", "app.py"]
- ---> Running in 43c1bc17814a
- ---> Removed intermediate container 43c1bc17814a
- ---> fcc1ef707c2c
-Successfully built fcc1ef707c2c
+ ---> Running in 3c298ac7ac51
+ ---> Removed intermediate container 3c298ac7ac51
+ ---> ee79d6e06a67
+Successfully built ee79d6e06a67
 Successfully tagged python-sample-app:latest
 python-sample-app
 python-sample-app
-da58fabd5034c03109e1d6feeddcc94991b7ddf0781d53fd32faf7f17ef37f16
-docker: Error response from daemon: failed to set up container networking: driver failed programming external connectivity on endpoint python-sample-app (72f1d809343717c5d00288fb5cd33f043b423874305d0dbd7bda9d28b471180f): failed to bind host port for 0.0.0.0:5000:172.17.0.3:5000/tcp: address already in use
-
-Run 'docker run --help' for more information
-Deployment successful at Fri Dec  5 17:50:26 +0530 2025
+9c19746d93cf708827e25b6f6de969583baaa38912a852d48642c732ebe9fadd
+Deployment successful at Fri Dec  5 17:58:26 +0530 2025
 From https://github.com/kavindusamaranayake/python-app-simple
  * branch            main       -> FETCH_HEAD
 Already up to date.
@@ -251,16 +139,16 @@ DEPRECATED: The legacy builder is deprecated and will be removed in a future rel
             Install the buildx component to build images with BuildKit:
             https://docs.docker.com/go/buildx/
 
-Sending build context to Docker daemon   98.3kB
+Sending build context to Docker daemon  101.4kB
 Step 1/6 : FROM python:3.11-slim
  ---> 040af88f5bce
 Step 2/6 : WORKDIR /app
  ---> Using cache
  ---> 89cc55743e04
 Step 3/6 : COPY . .
- ---> 0ad631ed1369
+ ---> 6167bbd5b3ec
 Step 4/6 : RUN pip install -r requirements.txt
- ---> Running in f57a02ffeaaa
+ ---> Running in 34b85e4c0420
 Collecting Flask==3.0.0 (from -r requirements.txt (line 1))
   Downloading flask-3.0.0-py3-none-any.whl.metadata (3.6 kB)
 Collecting Werkzeug>=3.0.0 (from Flask==3.0.0->-r requirements.txt (line 1))
@@ -276,15 +164,15 @@ Collecting blinker>=1.6.2 (from Flask==3.0.0->-r requirements.txt (line 1))
 Collecting MarkupSafe>=2.0 (from Jinja2>=3.1.2->Flask==3.0.0->-r requirements.txt (line 1))
   Downloading markupsafe-3.0.3-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.7 kB)
 Downloading flask-3.0.0-py3-none-any.whl (99 kB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 99.7/99.7 kB 130.3 kB/s eta 0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 99.7/99.7 kB 47.9 kB/s eta 0:00:00
 Downloading blinker-1.9.0-py3-none-any.whl (8.5 kB)
 Downloading click-8.3.1-py3-none-any.whl (108 kB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 108.3/108.3 kB 177.0 kB/s eta 0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 108.3/108.3 kB 56.9 kB/s eta 0:00:00
 Downloading itsdangerous-2.2.0-py3-none-any.whl (16 kB)
 Downloading jinja2-3.1.6-py3-none-any.whl (134 kB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 134.9/134.9 kB 146.2 kB/s eta 0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 134.9/134.9 kB 70.6 kB/s eta 0:00:00
 Downloading werkzeug-3.1.4-py3-none-any.whl (224 kB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 225.0/225.0 kB 117.7 kB/s eta 0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 225.0/225.0 kB 72.0 kB/s eta 0:00:00
 Downloading markupsafe-3.0.3-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (22 kB)
 Installing collected packages: MarkupSafe, itsdangerous, click, blinker, Werkzeug, Jinja2, Flask
 Successfully installed Flask-3.0.0 Jinja2-3.1.6 MarkupSafe-3.0.3 Werkzeug-3.1.4 blinker-1.9.0 click-8.3.1 itsdangerous-2.2.0
@@ -292,25 +180,22 @@ Successfully installed Flask-3.0.0 Jinja2-3.1.6 MarkupSafe-3.0.3 Werkzeug-3.1.4 
 [0m[91m
 [notice] A new release of pip is available: 24.0 -> 25.3
 [notice] To update, run: pip install --upgrade pip
-[0m ---> Removed intermediate container f57a02ffeaaa
- ---> 558a0250ecdf
+[0m ---> Removed intermediate container 34b85e4c0420
+ ---> b4471cea519c
 Step 5/6 : EXPOSE 5000
- ---> Running in 5de5506c94e8
- ---> Removed intermediate container 5de5506c94e8
- ---> 01b3f9f47a62
+ ---> Running in 4cfe0759608b
+ ---> Removed intermediate container 4cfe0759608b
+ ---> c92f60d45d59
 Step 6/6 : CMD ["python", "app.py"]
- ---> Running in f51d039cf5e0
- ---> Removed intermediate container f51d039cf5e0
- ---> cfca5bd22504
-Successfully built cfca5bd22504
+ ---> Running in e6f72d51b120
+ ---> Removed intermediate container e6f72d51b120
+ ---> a73cd328aa63
+Successfully built a73cd328aa63
 Successfully tagged python-sample-app:latest
 python-sample-app
 python-sample-app
-6000c35bb42933a71fed04441f1865f7615bdd95566a5fd55608a9a03fe5db0f
-docker: Error response from daemon: failed to set up container networking: driver failed programming external connectivity on endpoint python-sample-app (2a653a21960ec08180120b61c648b13f9b4ccca8b64bd6f506485283144c60db): failed to bind host port for 0.0.0.0:5000:172.17.0.3:5000/tcp: address already in use
-
-Run 'docker run --help' for more information
-Deployment successful at Fri Dec  5 17:52:32 +0530 2025
+b7ab1e769ef80837fb530989f57944bdb263bb63b1f968725c0a2ce3bd006bfa
+Deployment successful at Fri Dec  5 18:00:47 +0530 2025
 From https://github.com/kavindusamaranayake/python-app-simple
  * branch            main       -> FETCH_HEAD
 Already up to date.
@@ -320,16 +205,16 @@ DEPRECATED: The legacy builder is deprecated and will be removed in a future rel
             Install the buildx component to build images with BuildKit:
             https://docs.docker.com/go/buildx/
 
-Sending build context to Docker daemon  102.9kB
+Sending build context to Docker daemon  105.5kB
 Step 1/6 : FROM python:3.11-slim
  ---> 040af88f5bce
 Step 2/6 : WORKDIR /app
  ---> Using cache
  ---> 89cc55743e04
 Step 3/6 : COPY . .
- ---> 8367fcfbf919
+ ---> a5d664ae1330
 Step 4/6 : RUN pip install -r requirements.txt
- ---> Running in 1601dc824f9b
+ ---> Running in 7c152f3094e9
 Collecting Flask==3.0.0 (from -r requirements.txt (line 1))
   Downloading flask-3.0.0-py3-none-any.whl.metadata (3.6 kB)
 Collecting Werkzeug>=3.0.0 (from Flask==3.0.0->-r requirements.txt (line 1))
@@ -345,15 +230,15 @@ Collecting blinker>=1.6.2 (from Flask==3.0.0->-r requirements.txt (line 1))
 Collecting MarkupSafe>=2.0 (from Jinja2>=3.1.2->Flask==3.0.0->-r requirements.txt (line 1))
   Downloading markupsafe-3.0.3-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.7 kB)
 Downloading flask-3.0.0-py3-none-any.whl (99 kB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 99.7/99.7 kB 88.7 kB/s eta 0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 99.7/99.7 kB 276.2 kB/s eta 0:00:00
 Downloading blinker-1.9.0-py3-none-any.whl (8.5 kB)
 Downloading click-8.3.1-py3-none-any.whl (108 kB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 108.3/108.3 kB 111.0 kB/s eta 0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 108.3/108.3 kB 570.9 kB/s eta 0:00:00
 Downloading itsdangerous-2.2.0-py3-none-any.whl (16 kB)
 Downloading jinja2-3.1.6-py3-none-any.whl (134 kB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 134.9/134.9 kB 24.1 kB/s eta 0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 134.9/134.9 kB 544.4 kB/s eta 0:00:00
 Downloading werkzeug-3.1.4-py3-none-any.whl (224 kB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 225.0/225.0 kB 25.7 kB/s eta 0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 225.0/225.0 kB 670.8 kB/s eta 0:00:00
 Downloading markupsafe-3.0.3-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (22 kB)
 Installing collected packages: MarkupSafe, itsdangerous, click, blinker, Werkzeug, Jinja2, Flask
 Successfully installed Flask-3.0.0 Jinja2-3.1.6 MarkupSafe-3.0.3 Werkzeug-3.1.4 blinker-1.9.0 click-8.3.1 itsdangerous-2.2.0
@@ -361,19 +246,367 @@ Successfully installed Flask-3.0.0 Jinja2-3.1.6 MarkupSafe-3.0.3 Werkzeug-3.1.4 
 [0m[91m
 [notice] A new release of pip is available: 24.0 -> 25.3
 [notice] To update, run: pip install --upgrade pip
-[0m ---> Removed intermediate container 1601dc824f9b
- ---> 39ddd7773ee2
+[0m ---> Removed intermediate container 7c152f3094e9
+ ---> de5b53d946a5
 Step 5/6 : EXPOSE 5000
- ---> Running in b28dd7b8edad
- ---> Removed intermediate container b28dd7b8edad
- ---> 35ac7bd0997b
+ ---> Running in 37757896ac4e
+ ---> Removed intermediate container 37757896ac4e
+ ---> ca2c8137dc11
 Step 6/6 : CMD ["python", "app.py"]
- ---> Running in 09303541f0d3
- ---> Removed intermediate container 09303541f0d3
- ---> a84fe5b5ed53
-Successfully built a84fe5b5ed53
+ ---> Running in 94c1f5e9bc17
+ ---> Removed intermediate container 94c1f5e9bc17
+ ---> 5e8394932b2f
+Successfully built 5e8394932b2f
 Successfully tagged python-sample-app:latest
-Error response from daemon: No such container: python-sample-app
-Error response from daemon: No such container: python-sample-app
-bb2ab0f5f2ff356f1805c9928af3f6d894c59f6dd5257bd332a05b02cfb14f49
-Deployment successful at Fri Dec  5 17:54:45 +0530 2025
+python-sample-app
+python-sample-app
+8a8dcca2bbf7889a906dbfeec245a51489bc6687d58de10464806b27636a6f3e
+Deployment successful at Fri Dec  5 18:02:38 +0530 2025
+From https://github.com/kavindusamaranayake/python-app-simple
+ * branch            main       -> FETCH_HEAD
+Already up to date.
+failed to fetch metadata: fork/exec /usr/local/lib/docker/cli-plugins/docker-buildx: no such file or directory
+
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+Sending build context to Docker daemon  109.1kB
+Step 1/6 : FROM python:3.11-slim
+ ---> 040af88f5bce
+Step 2/6 : WORKDIR /app
+ ---> Using cache
+ ---> 89cc55743e04
+Step 3/6 : COPY . .
+ ---> cc7ce723ffc9
+Step 4/6 : RUN pip install -r requirements.txt
+ ---> Running in ba214b7e09db
+Collecting Flask==3.0.0 (from -r requirements.txt (line 1))
+  Downloading flask-3.0.0-py3-none-any.whl.metadata (3.6 kB)
+Collecting Werkzeug>=3.0.0 (from Flask==3.0.0->-r requirements.txt (line 1))
+  Downloading werkzeug-3.1.4-py3-none-any.whl.metadata (4.0 kB)
+Collecting Jinja2>=3.1.2 (from Flask==3.0.0->-r requirements.txt (line 1))
+  Downloading jinja2-3.1.6-py3-none-any.whl.metadata (2.9 kB)
+Collecting itsdangerous>=2.1.2 (from Flask==3.0.0->-r requirements.txt (line 1))
+  Downloading itsdangerous-2.2.0-py3-none-any.whl.metadata (1.9 kB)
+Collecting click>=8.1.3 (from Flask==3.0.0->-r requirements.txt (line 1))
+  Downloading click-8.3.1-py3-none-any.whl.metadata (2.6 kB)
+Collecting blinker>=1.6.2 (from Flask==3.0.0->-r requirements.txt (line 1))
+  Downloading blinker-1.9.0-py3-none-any.whl.metadata (1.6 kB)
+Collecting MarkupSafe>=2.0 (from Jinja2>=3.1.2->Flask==3.0.0->-r requirements.txt (line 1))
+  Downloading markupsafe-3.0.3-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.7 kB)
+Downloading flask-3.0.0-py3-none-any.whl (99 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 99.7/99.7 kB 426.6 kB/s eta 0:00:00
+Downloading blinker-1.9.0-py3-none-any.whl (8.5 kB)
+Downloading click-8.3.1-py3-none-any.whl (108 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 108.3/108.3 kB 774.4 kB/s eta 0:00:00
+Downloading itsdangerous-2.2.0-py3-none-any.whl (16 kB)
+Downloading jinja2-3.1.6-py3-none-any.whl (134 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 134.9/134.9 kB 698.1 kB/s eta 0:00:00
+Downloading werkzeug-3.1.4-py3-none-any.whl (224 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 225.0/225.0 kB 461.9 kB/s eta 0:00:00
+Downloading markupsafe-3.0.3-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (22 kB)
+Installing collected packages: MarkupSafe, itsdangerous, click, blinker, Werkzeug, Jinja2, Flask
+Successfully installed Flask-3.0.0 Jinja2-3.1.6 MarkupSafe-3.0.3 Werkzeug-3.1.4 blinker-1.9.0 click-8.3.1 itsdangerous-2.2.0
+[91mWARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+[0m[91m
+[notice] A new release of pip is available: 24.0 -> 25.3
+[notice] To update, run: pip install --upgrade pip
+[0m ---> Removed intermediate container ba214b7e09db
+ ---> 932aa6d476f9
+Step 5/6 : EXPOSE 5000
+ ---> Running in c74746fcfa1d
+ ---> Removed intermediate container c74746fcfa1d
+ ---> e88d122f1578
+Step 6/6 : CMD ["python", "app.py"]
+ ---> Running in 8dab489c2e22
+ ---> Removed intermediate container 8dab489c2e22
+ ---> 858fd1f07d91
+Successfully built 858fd1f07d91
+Successfully tagged python-sample-app:latest
+python-sample-app
+python-sample-app
+7e7cc8aeb1453d9ca25ec11c7e8c5d9b2a1289e8903c95abe7e8b13b06016cbd
+Deployment successful at Fri Dec  5 18:04:28 +0530 2025
+From https://github.com/kavindusamaranayake/python-app-simple
+ * branch            main       -> FETCH_HEAD
+Already up to date.
+failed to fetch metadata: fork/exec /usr/local/lib/docker/cli-plugins/docker-buildx: no such file or directory
+
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+Sending build context to Docker daemon  113.2kB
+Step 1/6 : FROM python:3.11-slim
+ ---> 040af88f5bce
+Step 2/6 : WORKDIR /app
+ ---> Using cache
+ ---> 89cc55743e04
+Step 3/6 : COPY . .
+ ---> 205e74eb786f
+Step 4/6 : RUN pip install -r requirements.txt
+ ---> Running in 05d00f9a17c8
+Collecting Flask==3.0.0 (from -r requirements.txt (line 1))
+  Downloading flask-3.0.0-py3-none-any.whl.metadata (3.6 kB)
+Collecting Werkzeug>=3.0.0 (from Flask==3.0.0->-r requirements.txt (line 1))
+  Downloading werkzeug-3.1.4-py3-none-any.whl.metadata (4.0 kB)
+Collecting Jinja2>=3.1.2 (from Flask==3.0.0->-r requirements.txt (line 1))
+  Downloading jinja2-3.1.6-py3-none-any.whl.metadata (2.9 kB)
+Collecting itsdangerous>=2.1.2 (from Flask==3.0.0->-r requirements.txt (line 1))
+  Downloading itsdangerous-2.2.0-py3-none-any.whl.metadata (1.9 kB)
+Collecting click>=8.1.3 (from Flask==3.0.0->-r requirements.txt (line 1))
+  Downloading click-8.3.1-py3-none-any.whl.metadata (2.6 kB)
+Collecting blinker>=1.6.2 (from Flask==3.0.0->-r requirements.txt (line 1))
+  Downloading blinker-1.9.0-py3-none-any.whl.metadata (1.6 kB)
+Collecting MarkupSafe>=2.0 (from Jinja2>=3.1.2->Flask==3.0.0->-r requirements.txt (line 1))
+  Downloading markupsafe-3.0.3-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.7 kB)
+Downloading flask-3.0.0-py3-none-any.whl (99 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 99.7/99.7 kB 69.2 kB/s eta 0:00:00
+Downloading blinker-1.9.0-py3-none-any.whl (8.5 kB)
+Downloading click-8.3.1-py3-none-any.whl (108 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 108.3/108.3 kB 148.7 kB/s eta 0:00:00
+Downloading itsdangerous-2.2.0-py3-none-any.whl (16 kB)
+Downloading jinja2-3.1.6-py3-none-any.whl (134 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 134.9/134.9 kB 97.5 kB/s eta 0:00:00
+Downloading werkzeug-3.1.4-py3-none-any.whl (224 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 225.0/225.0 kB 101.8 kB/s eta 0:00:00
+Downloading markupsafe-3.0.3-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (22 kB)
+Installing collected packages: MarkupSafe, itsdangerous, click, blinker, Werkzeug, Jinja2, Flask
+Successfully installed Flask-3.0.0 Jinja2-3.1.6 MarkupSafe-3.0.3 Werkzeug-3.1.4 blinker-1.9.0 click-8.3.1 itsdangerous-2.2.0
+[91mWARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+[0m[91m
+[notice] A new release of pip is available: 24.0 -> 25.3
+[notice] To update, run: pip install --upgrade pip
+[0m ---> Removed intermediate container 05d00f9a17c8
+ ---> 3662e7cf25f3
+Step 5/6 : EXPOSE 5000
+ ---> Running in 0d84938f0533
+ ---> Removed intermediate container 0d84938f0533
+ ---> 9c2fd1d02618
+Step 6/6 : CMD ["python", "app.py"]
+ ---> Running in c99b5321d7c0
+ ---> Removed intermediate container c99b5321d7c0
+ ---> 3e6cb8fbd2f1
+Successfully built 3e6cb8fbd2f1
+Successfully tagged python-sample-app:latest
+python-sample-app
+python-sample-app
+6ebb0fbd631c692944aecb558f72d5c4fba4ee164981259333b82a307e505843
+Deployment successful at Fri Dec  5 18:06:33 +0530 2025
+/home/kavindu/projects-devops/python-app-simple/deploy.sh: line 3: =: command not found
+From https://github.com/kavindusamaranayake/python-app-simple
+ * branch            main       -> FETCH_HEAD
+Already up to date.
+failed to fetch metadata: fork/exec /usr/local/lib/docker/cli-plugins/docker-buildx: no such file or directory
+
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+Sending build context to Docker daemon  117.2kB
+Step 1/6 : FROM python:3.11-slim
+ ---> 040af88f5bce
+Step 2/6 : WORKDIR /app
+ ---> Using cache
+ ---> 89cc55743e04
+Step 3/6 : COPY . .
+ ---> e421d8c3d0ff
+Step 4/6 : RUN pip install -r requirements.txt
+ ---> Running in b6c209f42408
+Collecting Flask==3.0.0 (from -r requirements.txt (line 1))
+  Downloading flask-3.0.0-py3-none-any.whl.metadata (3.6 kB)
+Collecting Werkzeug>=3.0.0 (from Flask==3.0.0->-r requirements.txt (line 1))
+  Downloading werkzeug-3.1.4-py3-none-any.whl.metadata (4.0 kB)
+Collecting Jinja2>=3.1.2 (from Flask==3.0.0->-r requirements.txt (line 1))
+  Downloading jinja2-3.1.6-py3-none-any.whl.metadata (2.9 kB)
+Collecting itsdangerous>=2.1.2 (from Flask==3.0.0->-r requirements.txt (line 1))
+  Downloading itsdangerous-2.2.0-py3-none-any.whl.metadata (1.9 kB)
+Collecting click>=8.1.3 (from Flask==3.0.0->-r requirements.txt (line 1))
+  Downloading click-8.3.1-py3-none-any.whl.metadata (2.6 kB)
+Collecting blinker>=1.6.2 (from Flask==3.0.0->-r requirements.txt (line 1))
+  Downloading blinker-1.9.0-py3-none-any.whl.metadata (1.6 kB)
+Collecting MarkupSafe>=2.0 (from Jinja2>=3.1.2->Flask==3.0.0->-r requirements.txt (line 1))
+  Downloading markupsafe-3.0.3-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.7 kB)
+Downloading flask-3.0.0-py3-none-any.whl (99 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 99.7/99.7 kB 72.4 kB/s eta 0:00:00
+Downloading blinker-1.9.0-py3-none-any.whl (8.5 kB)
+Downloading click-8.3.1-py3-none-any.whl (108 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 108.3/108.3 kB 33.2 kB/s eta 0:00:00
+Downloading itsdangerous-2.2.0-py3-none-any.whl (16 kB)
+Downloading jinja2-3.1.6-py3-none-any.whl (134 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 134.9/134.9 kB 14.2 kB/s eta 0:00:00
+Downloading werkzeug-3.1.4-py3-none-any.whl (224 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 225.0/225.0 kB 5.4 kB/s eta 0:00:00
+Downloading markupsafe-3.0.3-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (22 kB)
+Installing collected packages: MarkupSafe, itsdangerous, click, blinker, Werkzeug, Jinja2, Flask
+Successfully installed Flask-3.0.0 Jinja2-3.1.6 MarkupSafe-3.0.3 Werkzeug-3.1.4 blinker-1.9.0 click-8.3.1 itsdangerous-2.2.0
+[91mWARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+[0m[91m
+[notice] A new release of pip is available: 24.0 -> 25.3
+[notice] To update, run: pip install --upgrade pip
+[0m ---> Removed intermediate container b6c209f42408
+ ---> 4d9a16f14258
+Step 5/6 : EXPOSE 5000
+ ---> Running in b96a03a1db2c
+ ---> Removed intermediate container b96a03a1db2c
+ ---> 8cdcd4404919
+Step 6/6 : CMD ["python", "app.py"]
+ ---> Running in e66ba729541f
+ ---> Removed intermediate container e66ba729541f
+ ---> 219806065db6
+Successfully built 219806065db6
+Successfully tagged python-sample-app:latest
+/home/kavindu/projects-devops/python-app-simple/deploy.sh: line 13: image: command not found
+failed to fetch metadata: fork/exec /usr/local/lib/docker/cli-plugins/docker-buildx: no such file or directory
+
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+invalid argument "$:latest" for "-t, --tag" flag: invalid reference format
+
+Usage:  docker build [OPTIONS] PATH | URL | -
+
+Run 'docker build --help' for more information
+python-sample-app
+/home/kavindu/projects-devops/python-app-simple/deploy.sh: line 18: pp: command not found
+python-sample-app
+adaf10ec35bdcdc49c90c02649f6a1faee63150b3a53be0415cf0e0af1146c0e
+Deployment successful at Fri Dec  5 18:09:56 +0530 2025
+/home/kavindu/projects-devops/python-app-simple/deploy.sh: line 5: IMG_TAG: command not found
+From https://github.com/kavindusamaranayake/python-app-simple
+ * branch            main       -> FETCH_HEAD
+Already up to date.
+failed to fetch metadata: fork/exec /usr/local/lib/docker/cli-plugins/docker-buildx: no such file or directory
+
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+Sending build context to Docker daemon  122.4kB
+Step 1/6 : FROM python:3.11-slim
+ ---> 040af88f5bce
+Step 2/6 : WORKDIR /app
+ ---> Using cache
+ ---> 89cc55743e04
+Step 3/6 : COPY . .
+ ---> ea34a4ef166f
+Step 4/6 : RUN pip install -r requirements.txt
+ ---> Running in a46a9b4fb177
+Collecting Flask==3.0.0 (from -r requirements.txt (line 1))
+  Downloading flask-3.0.0-py3-none-any.whl.metadata (3.6 kB)
+Collecting Werkzeug>=3.0.0 (from Flask==3.0.0->-r requirements.txt (line 1))
+  Downloading werkzeug-3.1.4-py3-none-any.whl.metadata (4.0 kB)
+Collecting Jinja2>=3.1.2 (from Flask==3.0.0->-r requirements.txt (line 1))
+  Downloading jinja2-3.1.6-py3-none-any.whl.metadata (2.9 kB)
+Collecting itsdangerous>=2.1.2 (from Flask==3.0.0->-r requirements.txt (line 1))
+  Downloading itsdangerous-2.2.0-py3-none-any.whl.metadata (1.9 kB)
+Collecting click>=8.1.3 (from Flask==3.0.0->-r requirements.txt (line 1))
+  Downloading click-8.3.1-py3-none-any.whl.metadata (2.6 kB)
+Collecting blinker>=1.6.2 (from Flask==3.0.0->-r requirements.txt (line 1))
+  Downloading blinker-1.9.0-py3-none-any.whl.metadata (1.6 kB)
+Collecting MarkupSafe>=2.0 (from Jinja2>=3.1.2->Flask==3.0.0->-r requirements.txt (line 1))
+  Downloading markupsafe-3.0.3-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.7 kB)
+Downloading flask-3.0.0-py3-none-any.whl (99 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 99.7/99.7 kB 104.7 kB/s eta 0:00:00
+Downloading blinker-1.9.0-py3-none-any.whl (8.5 kB)
+Downloading click-8.3.1-py3-none-any.whl (108 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 108.3/108.3 kB 320.3 kB/s eta 0:00:00
+Downloading itsdangerous-2.2.0-py3-none-any.whl (16 kB)
+Downloading jinja2-3.1.6-py3-none-any.whl (134 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 134.9/134.9 kB 261.6 kB/s eta 0:00:00
+Downloading werkzeug-3.1.4-py3-none-any.whl (224 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 225.0/225.0 kB 121.0 kB/s eta 0:00:00
+Downloading markupsafe-3.0.3-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (22 kB)
+Installing collected packages: MarkupSafe, itsdangerous, click, blinker, Werkzeug, Jinja2, Flask
+Successfully installed Flask-3.0.0 Jinja2-3.1.6 MarkupSafe-3.0.3 Werkzeug-3.1.4 blinker-1.9.0 click-8.3.1 itsdangerous-2.2.0
+[91mWARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+[0m[91m
+[notice] A new release of pip is available: 24.0 -> 25.3
+[notice] To update, run: pip install --upgrade pip
+[0m ---> Removed intermediate container a46a9b4fb177
+ ---> e00657e78504
+Step 5/6 : EXPOSE 5000
+ ---> Running in e56307080d1a
+ ---> Removed intermediate container e56307080d1a
+ ---> ed80f58d5ba5
+Step 6/6 : CMD ["python", "app.py"]
+ ---> Running in b81d0eb44789
+ ---> Removed intermediate container b81d0eb44789
+ ---> 174771899d08
+Successfully built 174771899d08
+Successfully tagged python-sample-app:latest
+/home/kavindu/projects-devops/python-app-simple/deploy.sh: line 16: IMG_TAG: command not found
+python-sample-app
+rm: cannot remove 'python-sample-app': No such file or directory
+docker: Error response from daemon: Conflict. The container name "/python-sample-app" is already in use by container "adaf10ec35bdcdc49c90c02649f6a1faee63150b3a53be0415cf0e0af1146c0e". You have to remove (or rename) that container to be able to reuse that name.
+
+Run 'docker run --help' for more information
+Deployment successful at Fri Dec  5 18:10:39 +0530 2025
+From https://github.com/kavindusamaranayake/python-app-simple
+ * branch            main       -> FETCH_HEAD
+Already up to date.
+failed to fetch metadata: fork/exec /usr/local/lib/docker/cli-plugins/docker-buildx: no such file or directory
+
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+Sending build context to Docker daemon    127kB
+Step 1/6 : FROM python:3.11-slim
+ ---> 040af88f5bce
+Step 2/6 : WORKDIR /app
+ ---> Using cache
+ ---> 89cc55743e04
+Step 3/6 : COPY . .
+ ---> 2ba3828f3b4f
+Step 4/6 : RUN pip install -r requirements.txt
+ ---> Running in 29b5d9e34d3d
+Collecting Flask==3.0.0 (from -r requirements.txt (line 1))
+  Downloading flask-3.0.0-py3-none-any.whl.metadata (3.6 kB)
+Collecting Werkzeug>=3.0.0 (from Flask==3.0.0->-r requirements.txt (line 1))
+  Downloading werkzeug-3.1.4-py3-none-any.whl.metadata (4.0 kB)
+Collecting Jinja2>=3.1.2 (from Flask==3.0.0->-r requirements.txt (line 1))
+  Downloading jinja2-3.1.6-py3-none-any.whl.metadata (2.9 kB)
+Collecting itsdangerous>=2.1.2 (from Flask==3.0.0->-r requirements.txt (line 1))
+  Downloading itsdangerous-2.2.0-py3-none-any.whl.metadata (1.9 kB)
+Collecting click>=8.1.3 (from Flask==3.0.0->-r requirements.txt (line 1))
+  Downloading click-8.3.1-py3-none-any.whl.metadata (2.6 kB)
+Collecting blinker>=1.6.2 (from Flask==3.0.0->-r requirements.txt (line 1))
+  Downloading blinker-1.9.0-py3-none-any.whl.metadata (1.6 kB)
+Collecting MarkupSafe>=2.0 (from Jinja2>=3.1.2->Flask==3.0.0->-r requirements.txt (line 1))
+  Downloading markupsafe-3.0.3-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.7 kB)
+Downloading flask-3.0.0-py3-none-any.whl (99 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 99.7/99.7 kB 174.4 kB/s eta 0:00:00
+Downloading blinker-1.9.0-py3-none-any.whl (8.5 kB)
+Downloading click-8.3.1-py3-none-any.whl (108 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 108.3/108.3 kB 260.3 kB/s eta 0:00:00
+Downloading itsdangerous-2.2.0-py3-none-any.whl (16 kB)
+Downloading jinja2-3.1.6-py3-none-any.whl (134 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 134.9/134.9 kB 276.0 kB/s eta 0:00:00
+Downloading werkzeug-3.1.4-py3-none-any.whl (224 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 225.0/225.0 kB 336.6 kB/s eta 0:00:00
+Downloading markupsafe-3.0.3-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (22 kB)
+Installing collected packages: MarkupSafe, itsdangerous, click, blinker, Werkzeug, Jinja2, Flask
+Successfully installed Flask-3.0.0 Jinja2-3.1.6 MarkupSafe-3.0.3 Werkzeug-3.1.4 blinker-1.9.0 click-8.3.1 itsdangerous-2.2.0
+[91mWARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+[0m[91m
+[notice] A new release of pip is available: 24.0 -> 25.3
+[notice] To update, run: pip install --upgrade pip
+[0m ---> Removed intermediate container 29b5d9e34d3d
+ ---> 0186e419ae30
+Step 5/6 : EXPOSE 5000
+ ---> Running in ac34ddec647a
+ ---> Removed intermediate container ac34ddec647a
+ ---> 4fa5286bead6
+Step 6/6 : CMD ["python", "app.py"]
+ ---> Running in 21c9e8785dc6
+ ---> Removed intermediate container 21c9e8785dc6
+ ---> d6ca974f7725
+Successfully built d6ca974f7725
+Successfully tagged python-sample-app:latest
+python-sample-app
+python-sample-app
+b5d71cb4deae66876e908dd6e1db9fd8d705a4276e569b3a2a571b1d02f783ad
+Deployment successful at Fri Dec  5 18:12:38 +0530 2025
