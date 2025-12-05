@@ -14,6 +14,6 @@ docker stop python-sample-app || true
 docker rm python-sample-app || true
 
 # Run new container
-docker run -d --name python-sample-app -p 5000:5000 python-sample-app:latest
+docker run -d --name python-sample-app -p 5002:5000 python-sample-app:latest
 
 echo "Deployment successful at $(date)"
